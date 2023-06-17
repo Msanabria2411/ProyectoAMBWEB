@@ -1,0 +1,53 @@
+﻿@model CafeteriaWeb.Entities.ClientesEnt
+
+
+@{
+    ViewBag.Title = "Registro";
+    Layout = "~/Views/Shared/_Layout - Login.cshtml";
+}
+
+@using (Html.BeginForm("RegistrarUsuario", "Home", FormMethod.Post))
+{
+
+    <h2>Registro</h2>
+
+    <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+            <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <a href="index.html" class="">
+                        <h3 class="text-primary"><i class="fa fa-laptop me-2"></i>Cafeteria</h3>
+                    </a>
+                </div>
+                <div class="form-floating mb-3">
+                    @Html.TextBoxFor(m => m.Nombre, new { @type = "text", @class = "form-control", @placeholder = "Nombre" })
+                    <label for="floatingInput">Nombre</label>
+                </div>
+                <div class="form-floating mb-3">
+                    @Html.TextBoxFor(m => m.Direccion, new { @type = "text", @class = "form-control", @placeholder = "Direccion" })
+                    <label for="floatingInput">Direccion</label>
+                </div>
+                <div class="form-floating mb-3">
+                    @Html.TextBoxFor(m => m.Email, new { @type = "email", @class = "form-control", @placeholder = "Email@Email" })
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <div class="form-floating mb-4">
+                    @Html.TextBoxFor(m => m.Contrasenna, new { @type = "password", @class = "form-control", @placeholder = "contraseña" })
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <div class="form-floating mb-4">
+                    @Html.TextBoxFor(m => m.Telefono, new { @type = "tel", @class = "form-control", @placeholder = "Telefono" })
+                    <label for="floatingPassword">Telefono</label>
+                </div>
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <div class="form-check">
+                    </div>
+                    <a href="">Recuperar Contraseña</a>
+                </div>
+                <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Registrarse</button>
+                <p class="text-center mb-0">Si no tiene cuenta registrese <a href="@Url.Action("Login","Home")">Iniciar Sesion </a></p>
+            </div>
+        </div>
+    </div>
+
+}
